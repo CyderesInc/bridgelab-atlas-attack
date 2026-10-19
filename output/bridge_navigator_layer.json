@@ -1,0 +1,228 @@
+{
+  "name": "BridgeLab: ATLAS to ATT&CK Agent Identity Pivot",
+  "versions": {
+    "attack": "19",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "ATT&CK v19 techniques reachable when an AI agent's identity is weaponized via ATLAS manipulation techniques. Each technique annotation includes the ATLAS entry point, bridge condition, and detection opportunity.",
+  "filters": {
+    "platforms": [
+      "Azure AD",
+      "Google Workspace",
+      "IaaS",
+      "SaaS",
+      "Linux",
+      "Windows"
+    ]
+  },
+  "sorting": 3,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1098.001",
+      "tactic": "persistence",
+      "score": 100,
+      "color": "#c6dbef",
+      "comment": "[AML.T0080.001] AI Agent Context Poisoning: Memory\nBridge: Poisoned memory entry instructs agent to add backup credentials; agent decides to use its own OAuth token to call IAM API\nDetect: IAM CreateAccessKey called by agent service principal outside scheduled rotation window\nLog: AWS CloudTrail / Azure Activity Log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack; Entra ID/Azure (live)"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1550.001",
+      "tactic": "lateral-movement",
+      "score": 100,
+      "color": "#756bb1",
+      "comment": "[AML.T0051] LLM Prompt Injection\nBridge: Injected prompt in tool output instructs agent to call privileged API; agent uses its application access token for an out-of-scope resource\nDetect: Agent service principal accesses resource outside its normal scope; token used for API not in agent's declared tool list\nLog: IdP audit log (Okta System Log / Entra Sign-in Log)",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack (live); Entra ID/Azure (read-only proof only)"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1078.004",
+      "tactic": "persistence",
+      "score": 100,
+      "color": "#c6dbef",
+      "comment": "[AML.T0080] AI Agent Context Poisoning\nBridge: Poisoned context causes agent to authenticate to a cloud resource outside its normal operating scope using its valid cloud identity\nDetect: Agent cloud identity used to access resources with no prior access history; first-seen resource access by agent principal\nLog: Cloud audit log (CloudTrail / Activity Log / GCP Audit Log)",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1098.003",
+      "tactic": "privilege-escalation",
+      "score": 100,
+      "color": "#fdae6b",
+      "comment": "[AML.T0053] AI Agent Tool Invocation\nBridge: Agent is manipulated into invoking its IAM management tool to attach an administrator policy to its own role\nDetect: IAM role-policy attachment by agent principal that elevates its own permissions; self-escalation pattern (caller == target)\nLog: AWS CloudTrail IAM events / Microsoft Graph Audit Log (Entra ID directory roles)",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack (live); Entra ID/Azure (read-only proof only)"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1552.001",
+      "tactic": "credential-access",
+      "score": 100,
+      "color": "#e6550d",
+      "comment": "[AML.T0110] AI Agent Tool Poisoning\nBridge: Poisoned tool contains hidden code that reads the agent's credential files and exfiltrates them to an attacker-controlled endpoint\nDetect: Agent process reads credential/config files outside its normal file access pattern; outbound connection to unknown endpoint immediately after credential file read\nLog: Host EDR / agent sandbox file-access log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1528",
+      "tactic": "credential-access",
+      "score": 100,
+      "color": "#e6550d",
+      "comment": "[AML.T0083] Credentials from AI Agent Configuration\nBridge: Adversary extracts stored OAuth tokens and API keys from agent configuration via prompt injection or configuration discovery\nDetect: Agent's application token used from unexpected IP or user-agent; token replay from location inconsistent with agent's known infrastructure\nLog: IdP audit log / OAuth token introspection log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1078.003",
+      "tactic": "privilege-escalation",
+      "score": 100,
+      "color": "#fdae6b",
+      "comment": "[AML.T0105] Escape to Host\nBridge: Agent breaks out of its sandbox or container and accesses the host operating system's identity and credentials\nDetect: Agent container or sandbox process accesses host credential stores; container escape indicators followed by local account authentication\nLog: Container runtime log (containerd/CRI-O) / host audit log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1685.002",
+      "tactic": "defense-impairment",
+      "score": 100,
+      "color": "#d62728",
+      "comment": "[AML.T0080.001] AI Agent Context Poisoning: Memory\nBridge: Poisoned memory instructs agent to disable cloud audit logging before performing sensitive operations, using its legitimate admin access\nDetect: Audit-log config change by agent principal \u2014 CloudWatch Logs retention cut to the minimum (AWS) or a diagnostic setting deleted (Azure) by a non-human identity outside the logging-config change workflow\nLog: AWS CloudTrail management events / Azure Activity Log / SIEM alert on log-source gap",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack (live); Entra ID/Azure (live)"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1136.003",
+      "tactic": "persistence",
+      "score": 100,
+      "color": "#c6dbef",
+      "comment": "[AML.T0104] Publish Poisoned AI Agent Tool\nBridge: Tool from a compromised registry uses the agent's own cloud identity to create a brand-new backdoor identity (App Registration / IAM user) it controls, for persistent attacker access\nDetect: New App Registration / IAM user created by agent service principal; account creation by non-human identity outside provisioning workflow\nLog: AWS CloudTrail / Microsoft Graph Audit Log (Entra ID) / IdP provisioning log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack (code-complete, mock-verified); Entra ID/Azure (live)"
+        }
+      ]
+    },
+    {
+      "techniqueID": "T1530",
+      "tactic": "collection",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "[AML.T0053] AI Agent Tool Invocation\nBridge: Agent is steered to read and exfiltrate sensitive data from cloud storage using its legitimate storage-reader credentials\nDetect: Agent principal accesses storage bucket or blob container outside its normal pattern; bulk read operations or access to buckets with no prior agent access history\nLog: S3 server access log / Azure Blob diagnostic log / GCP Cloud Audit Log",
+      "enabled": true,
+      "metadata": [
+        {
+          "name": "atlas_count",
+          "value": "1"
+        },
+        {
+          "name": "validated_environments",
+          "value": "AWS/LocalStack (live); Entra ID/Azure (live)"
+        }
+      ]
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6666"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    {
+      "label": "Reachable via ATLAS agent manipulation",
+      "color": "#ff6666"
+    }
+  ],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": false,
+  "selectSubtechniquesWithParent": false
+}

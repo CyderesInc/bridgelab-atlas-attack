@@ -1,0 +1,11 @@
+services:
+  keycloak:
+    ports: !override
+      - "8180:8080"
+  localstack:
+    # Add CloudWatch Logs to the base SERVICES (iam,sts,s3) so the
+    # disable-cloud-log technique (T1685.002) can run live. CloudTrail is
+    # Pro-only on this LocalStack license; CloudWatch Logs is community-
+    # supported. This scalar replaces the base SERVICES value.
+    environment:
+      SERVICES: iam,sts,s3,logs

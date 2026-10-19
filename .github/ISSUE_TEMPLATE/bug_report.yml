@@ -1,0 +1,40 @@
+name: Bug report
+description: Something in BridgeLab behaves incorrectly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for the report. This is a security-research tool — please leave out
+        real OAuth tokens, client secrets, access keys, and tenant/subscription IDs.
+        A redacted example is enough.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `pip show bridgelab` (the Version line).
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: invocation
+    attributes:
+      label: How you invoked it
+      description: The flags you used.
+      placeholder: "bridgelab-attack --mode mock --technique additional-roles"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened
+      description: Include the relevant output. Redact any real identifiers first.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, and whether you ran mock, LocalStack/Keycloak, or a test tenant.
+    validations:
+      required: false

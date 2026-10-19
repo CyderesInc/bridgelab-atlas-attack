@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a technique, detection, or improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The defensive-research use case or gap this would address.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: >-
+        What you'd like BridgeLab to do. If it is a new ATLAS → ATT&CK pivot,
+        name the technique IDs and the bridge condition.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

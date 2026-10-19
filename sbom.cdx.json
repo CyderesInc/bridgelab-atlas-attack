@@ -1,0 +1,1026 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:cfdaa289-a3ba-4773-985a-791d997286cc",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-07T00:00:00Z",
+    "lifecycles": [
+      {
+        "phase": "build"
+      }
+    ],
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "bridgelab-sbom-generator",
+          "description": "Inline generator over importlib.metadata of the installed environment (Python 3.12); hashes and distribution metadata fetched from the PyPI JSON API."
+        }
+      ]
+    },
+    "supplier": {
+      "name": "Cyderes"
+    },
+    "licenses": [
+      {
+        "license": {
+          "id": "Apache-2.0"
+        }
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:pypi/bridgelab@0.1.0",
+      "name": "bridgelab",
+      "version": "0.1.0",
+      "description": "BridgeLab: ATLAS-to-ATT&CK agent identity pivot \u2014 ATT&CKcon 7.0. Core runtime depends on boto3 and httpx; msal is the [entra] extra and pytest the [dev] extra. No third-party source is vendored.",
+      "purl": "pkg:pypi/bridgelab@0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright 2026 Cyderes",
+      "supplier": {
+        "name": "Cyderes"
+      }
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/anyio@4.14.0",
+      "name": "anyio",
+      "version": "4.14.0",
+      "scope": "required",
+      "purl": "pkg:pypi/anyio@4.14.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/anyio/4.14.0/",
+          "comment": "SHA-256 above is of the source distribution anyio-4.14.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/boto3@1.43.36",
+      "name": "boto3",
+      "version": "1.43.36",
+      "scope": "required",
+      "purl": "pkg:pypi/boto3@1.43.36",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Amazon Web Services"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "587d7ee92a12e440ad12b0e7f11f3358f0c4d65b19f64726efc94aaf194aff28"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/boto3/1.43.36/",
+          "comment": "SHA-256 above is of the source distribution boto3-1.43.36.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/boto/boto3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/botocore@1.43.36",
+      "name": "botocore",
+      "version": "1.43.36",
+      "scope": "required",
+      "purl": "pkg:pypi/botocore@1.43.36",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Amazon Web Services"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4cae47d1b2d426316b85a0087d9e69e048f13bc003b5177d74639fe9dfd28205"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/botocore/1.43.36/",
+          "comment": "SHA-256 above is of the source distribution botocore-1.43.36.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/boto/botocore"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/certifi@2026.6.17",
+      "name": "certifi",
+      "version": "2026.6.17",
+      "scope": "required",
+      "purl": "pkg:pypi/certifi@2026.6.17",
+      "licenses": [
+        {
+          "license": {
+            "id": "MPL-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Kenneth Reitz"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "024c88eeec92ca068db80f02b8b07c9cef7b9fe261d1d535abfd5abd6f6af432"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/certifi/2026.6.17/",
+          "comment": "SHA-256 above is of the source distribution certifi-2026.6.17.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/certifi/python-certifi"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cffi@2.1.1",
+      "name": "cffi",
+      "version": "2.1.1",
+      "scope": "optional",
+      "purl": "pkg:pypi/cffi@2.1.1",
+      "licenses": [
+        {
+          "expression": "MIT-0"
+        }
+      ],
+      "supplier": {
+        "name": "Armin Rigo, Maciej Fijalkowski"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/cffi/2.1.1/",
+          "comment": "SHA-256 above is of the source distribution cffi-2.1.1.tar.gz; this version publishes 100 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/python-cffi/cffi"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/charset-normalizer@3.5.1",
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "scope": "optional",
+      "purl": "pkg:pypi/charset-normalizer@3.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/charset-normalizer/3.5.1/",
+          "comment": "SHA-256 above is of the source distribution charset_normalizer-3.5.1.tar.gz; this version publishes 172 file(s) on PyPI."
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@50.0.1",
+      "name": "cryptography",
+      "version": "50.0.1",
+      "scope": "optional",
+      "purl": "pkg:pypi/cryptography@50.0.1",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 OR BSD-3-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/cryptography/50.0.1/",
+          "comment": "SHA-256 above is of the source distribution cryptography-50.0.1.tar.gz; this version publishes 46 file(s) on PyPI."
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/h11@0.16.0",
+      "name": "h11",
+      "version": "0.16.0",
+      "scope": "required",
+      "purl": "pkg:pypi/h11@0.16.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Nathaniel J. Smith"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/h11/0.16.0/",
+          "comment": "SHA-256 above is of the source distribution h11-0.16.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/python-hyper/h11"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/httpcore@1.0.9",
+      "name": "httpcore",
+      "version": "1.0.9",
+      "scope": "required",
+      "purl": "pkg:pypi/httpcore@1.0.9",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/httpcore/1.0.9/",
+          "comment": "SHA-256 above is of the source distribution httpcore-1.0.9.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://www.encode.io/httpcore/"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/httpx@0.28.1",
+      "name": "httpx",
+      "version": "0.28.1",
+      "scope": "required",
+      "purl": "pkg:pypi/httpx@0.28.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/httpx/0.28.1/",
+          "comment": "SHA-256 above is of the source distribution httpx-0.28.1.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/encode/httpx"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/idna@3.18",
+      "name": "idna",
+      "version": "3.18",
+      "scope": "required",
+      "purl": "pkg:pypi/idna@3.18",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/idna/3.18/",
+          "comment": "SHA-256 above is of the source distribution idna-3.18.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/kjd/idna"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/iniconfig@2.3.0",
+      "name": "iniconfig",
+      "version": "2.3.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/iniconfig@2.3.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/iniconfig/2.3.0/",
+          "comment": "SHA-256 above is of the source distribution iniconfig-2.3.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/pytest-dev/iniconfig"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/jmespath@1.1.0",
+      "name": "jmespath",
+      "version": "1.1.0",
+      "scope": "required",
+      "purl": "pkg:pypi/jmespath@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "James Saryerwinnie"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/jmespath/1.1.0/",
+          "comment": "SHA-256 above is of the source distribution jmespath-1.1.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jmespath/jmespath.py"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/msal@1.38.0",
+      "name": "msal",
+      "version": "1.38.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/msal@1.38.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Microsoft Corporation"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4f10ff1257bacfd1781f22e85bd2b8d43ad1b490f3b6aafd7906671cadedd464"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/msal/1.38.0/",
+          "comment": "SHA-256 above is of the source distribution msal-1.38.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/AzureAD/microsoft-authentication-library-for-python"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/packaging@26.2",
+      "name": "packaging",
+      "version": "26.2",
+      "scope": "optional",
+      "purl": "pkg:pypi/packaging@26.2",
+      "licenses": [
+        {
+          "expression": "Apache-2.0 OR BSD-2-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/packaging/26.2/",
+          "comment": "SHA-256 above is of the source distribution packaging-26.2.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/pypa/packaging"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pluggy@1.6.0",
+      "name": "pluggy",
+      "version": "1.6.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/pluggy@1.6.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/pluggy/1.6.0/",
+          "comment": "SHA-256 above is of the source distribution pluggy-1.6.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pycparser@3.0",
+      "name": "pycparser",
+      "version": "3.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/pycparser@3.0",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/pycparser/3.0/",
+          "comment": "SHA-256 above is of the source distribution pycparser-3.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eliben/pycparser"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pygments@2.20.0",
+      "name": "Pygments",
+      "version": "2.20.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/pygments@2.20.0",
+      "licenses": [
+        {
+          "expression": "BSD-2-Clause"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/Pygments/2.20.0/",
+          "comment": "SHA-256 above is of the source distribution pygments-2.20.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://pygments.org"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyjwt@2.13.0",
+      "name": "PyJWT",
+      "version": "2.13.0",
+      "scope": "optional",
+      "purl": "pkg:pypi/pyjwt@2.13.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/PyJWT/2.13.0/",
+          "comment": "SHA-256 above is of the source distribution pyjwt-2.13.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jpadilla/pyjwt"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pytest@9.1.1",
+      "name": "pytest",
+      "version": "9.1.1",
+      "scope": "optional",
+      "purl": "pkg:pypi/pytest@9.1.1",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/pytest/9.1.1/",
+          "comment": "SHA-256 above is of the source distribution pytest-9.1.1.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://docs.pytest.org/en/latest/"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "optional"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/python-dateutil@2.9.0.post0",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "scope": "required",
+      "purl": "pkg:pypi/python-dateutil@2.9.0.post0",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Gustavo Niemeyer"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/python-dateutil/2.9.0.post0/",
+          "comment": "SHA-256 above is of the source distribution python-dateutil-2.9.0.post0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/dateutil/dateutil"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@2.34.2",
+      "name": "requests",
+      "version": "2.34.2",
+      "scope": "optional",
+      "purl": "pkg:pypi/requests@2.34.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/requests/2.34.2/",
+          "comment": "SHA-256 above is of the source distribution requests-2.34.2.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/psf/requests"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/s3transfer@0.19.0",
+      "name": "s3transfer",
+      "version": "0.19.0",
+      "scope": "required",
+      "purl": "pkg:pypi/s3transfer@0.19.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Amazon Web Services"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ce436931687addc4c1712d52d40b32f53e88315723f107ffa20ba82b05a0f685"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/s3transfer/0.19.0/",
+          "comment": "SHA-256 above is of the source distribution s3transfer-0.19.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/boto/s3transfer"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/six@1.17.0",
+      "name": "six",
+      "version": "1.17.0",
+      "scope": "required",
+      "purl": "pkg:pypi/six@1.17.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Benjamin Peterson"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/six/1.17.0/",
+          "comment": "SHA-256 above is of the source distribution six-1.17.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/benjaminp/six"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing_extensions@4.15.0",
+      "name": "typing_extensions",
+      "version": "4.15.0",
+      "scope": "required",
+      "purl": "pkg:pypi/typing_extensions@4.15.0",
+      "licenses": [
+        {
+          "expression": "PSF-2.0"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/typing_extensions/4.15.0/",
+          "comment": "SHA-256 above is of the source distribution typing_extensions-4.15.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/python/typing_extensions"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@2.7.0",
+      "name": "urllib3",
+      "version": "2.7.0",
+      "scope": "required",
+      "purl": "pkg:pypi/urllib3@2.7.0",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://pypi.org/project/urllib3/2.7.0/",
+          "comment": "SHA-256 above is of the source distribution urllib3-2.7.0.tar.gz; this version publishes 2 file(s) on PyPI."
+        }
+      ],
+      "properties": [
+        {
+          "name": "bridgelab:scope",
+          "value": "transitive"
+        }
+      ]
+    }
+  ]
+}

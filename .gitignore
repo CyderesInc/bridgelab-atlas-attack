@@ -1,0 +1,42 @@
+__pycache__/
+*.egg-info/
+dist/
+.venv/
+# output/ holds generated deliverables that ARE shipped (the crosswalk and the
+# Navigator layer, both linked from the README). Only the per-run attack-chain
+# telemetry is regenerated each run and stays out of the repo.
+output/chain_output.json
+.env
+
+# Internal harness / working docs — not for public release
+/CLAUDE.md
+/MEMORY.md
+submission/
+
+# Claude Code harness config — internal, not for public release
+/.claude/
+
+# docs/ — only entra-setup.md is published
+/docs/*
+!/docs/entra-setup.md
+
+# OS / editor cruft
+.DS_Store
+._*
+.idea/
+.vscode/
+*.swp
+
+# Python build, test and lint caches
+*.py[cod]
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local env variants and logs (the committed template is .env.example)
+.env.*
+!.env.example
+*.log

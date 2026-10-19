@@ -1,0 +1,91 @@
+BridgeLab — bridging MITRE ATLAS and Enterprise ATT&CK v19 at the agent-identity seam
+Copyright 2026 Cyderes
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+
+================================================================================
+AUTHORSHIP
+================================================================================
+
+This software was developed by Cyderes personnel with the assistance of AI
+coding tools. That assistance does not denote a third-party author or confer
+any third-party rights. Copyright in the work is held by Cyderes.
+
+The public distribution of this software is a snapshot of the repository it was
+authored in, with internal development harness files removed. The paragraph
+above describes that repository; it is not a claim about the commit log shipped
+alongside any given snapshot.
+
+
+================================================================================
+RESPONSIBLE USE
+================================================================================
+
+BridgeLab is defensive security research. It exists to help teams detect the
+moment a manipulated AI agent turns its own legitimate identity into an attack,
+and every technique it runs emits telemetry for that purpose. Run it only
+against the throwaway sandbox it ships with (Keycloak + LocalStack) or a
+dedicated, non-production test tenant you own and are authorized to test. Live
+destructive paths are gated behind an explicit flag and must never be pointed at
+anything real. You are responsible for how you use this code. See the
+"Responsible use" note in README.md.
+
+
+================================================================================
+TRADEMARKS
+================================================================================
+
+The Apache License, Version 2.0 grants copyright and patent rights. It does NOT
+grant any right to use the trade names, trademarks, service marks, or product
+names of the licensor (section 6). Nothing in this repository should be read as
+such a grant.
+
+"Cyderes", together with its associated wordmarks and logos, is a trademark of
+Cyderes. Redistributing this software, modified or unmodified, conveys no right
+to use the Cyderes name or marks — to name a derivative work, to describe a
+product or service, or in any manner suggesting that Cyderes endorses it.
+
+MITRE ATT&CK® and MITRE ATLAS™ are registered trademarks and trademarks of The
+MITRE Corporation. BridgeLab is an independent research project; it is not
+produced, reviewed, endorsed by, or affiliated with The MITRE Corporation. The
+ATT&CK and ATLAS technique identifiers and names referenced in the crosswalk and
+Navigator layer are used descriptively, for interoperability, under MITRE's
+terms of use (https://attack.mitre.org/resources/legal-and-branding/terms-of-use/).
+This project targets ATT&CK v19 and the ATLAS AML.T identifier scheme; verify
+current identifiers against the published MITRE data before relying on them.
+
+
+================================================================================
+THIRD-PARTY COMPONENTS
+================================================================================
+
+This distribution vendors no third-party source code. The implementation is
+Python and depends on the third-party packages below, which are NOT bundled or
+redistributed here — they are declared in pyproject.toml and resolved by pip
+from PyPI at install time, each under its own license:
+
+  boto3            Apache License 2.0   — AWS SDK (LocalStack / AWS calls)
+  httpx            BSD 3-Clause         — HTTP client (IdP and Graph calls)
+  msal             MIT License          — optional, [entra] extra; Entra ID auth
+  pytest           MIT License          — optional, [dev] extra; test runner
+
+License terms for each package are published with that package; consult the
+package's own distribution for the authoritative text.
+
+
+================================================================================
+RUNTIME PREREQUISITES (not redistributed)
+================================================================================
+
+  Python 3.11+         Python Software Foundation License — required
+  pip / setuptools     installs the package and its dependencies — required
+  Docker + Docker      vendor's own license — optional; required only to stand
+    Compose            up the sandbox lab (Keycloak IdP + LocalStack AWS). The
+                       mock-mode attack chain runs without it. Invoked as
+                       external processes, never bundled.
+
+The lab pulls the Keycloak and LocalStack container images from their
+respective registries at `docker compose up` time; those images are the
+property of and licensed by their respective vendors and are not redistributed
+by this project.

@@ -1,0 +1,31 @@
+[project]
+name = "bridgelab"
+version = "0.1.0"
+description = "BridgeLab: ATLAS-to-ATT&CK agent identity pivot — ATT&CKcon 7.0"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+    "boto3>=1.35.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+entra = [
+    "msal>=1.28",
+]
+
+[project.scripts]
+bridgelab-crosswalk = "bridgelab.crosswalk:main"
+bridgelab-navigator = "bridgelab.navigator:main"
+bridgelab-attack = "bridgelab.chain:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bridgelab*"]
+
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.build_meta"
